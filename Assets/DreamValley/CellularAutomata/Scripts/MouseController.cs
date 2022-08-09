@@ -8,6 +8,8 @@ namespace DreamValley.CellularAutomata
     {
         [SerializeField] private Cell cellToSpawn;
         [SerializeField] private GridManager gridManager;
+        [SerializeField] private int particleCount = 1;
+        [SerializeField, Range(1, 50)] private float brushSize = 1;
 
         private Camera _camera;
 
@@ -30,7 +32,14 @@ namespace DreamValley.CellularAutomata
 
             if (hit.collider != null)
             {
-                gridManager.AddCellToQueue(new int2((int) hit.point.x, (int) hit.point.y), cellToSpawn);
+                for (int i = 0; i < particleCount; i++)
+                {
+                    var randomPos = UnityEngine.Random.insideUnitCircle * brushSize;
+
+                    gridManager.AddCellToQueue(
+                        new int2((int) hit.point.x + (int) randomPos.x, (int) hit.point.y + (int) randomPos.y),
+                        cellToSpawn);
+                }
             }
         }
     }

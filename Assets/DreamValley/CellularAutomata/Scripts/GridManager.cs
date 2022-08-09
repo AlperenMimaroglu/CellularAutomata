@@ -79,6 +79,11 @@ namespace DreamValley.CellularAutomata
 
                 foreach (var cell in _cellsToAdd)
                 {
+                    if (!_grid.IsIndexValid(cell.Key))
+                    {
+                        continue;
+                    }
+
                     if (_grid.Board[cell.Key.x, cell.Key.y] != null)
                     {
                         continue;

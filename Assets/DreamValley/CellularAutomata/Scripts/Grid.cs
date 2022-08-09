@@ -16,7 +16,7 @@ namespace DreamValley.CellularAutomata
             Board = board.Clone() as Cell[,];
         }
 
-        private bool IsIndexValid(int2 pos)
+        public bool IsIndexValid(int2 pos)
         {
             return pos.x >= 0 && pos.x < Board.GetLength(0) && pos.y >= 0 && pos.y < Board.GetLength(1);
         }

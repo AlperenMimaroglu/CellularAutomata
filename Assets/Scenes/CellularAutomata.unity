@@ -123,6 +123,54 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &82341398
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 82341400}
+  - component: {fileID: 82341399}
+  m_Layer: 0
+  m_Name: MouseController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &82341399
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 82341398}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0869208a4994429c8f4a6ccf7e2d0970, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cellToSpawn: {fileID: 4180206792439551153, guid: d9bb42e7632fde149a43c1ee85ffcd29, type: 3}
+  gridManager: {fileID: 198760021}
+  particleCount: 3
+  brushSize: 10
+--- !u!4 &82341400
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 82341398}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &198760020
 GameObject:
   m_ObjectHideFlags: 0
@@ -132,8 +180,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 198760022}
-  - component: {fileID: 198760021}
   - component: {fileID: 198760023}
+  - component: {fileID: 198760021}
   m_Layer: 0
   m_Name: GridManager
   m_TagString: Untagged
@@ -154,12 +202,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   boardSize:
-    x: 128
-    y: 128
-  sandCell: {fileID: 4180206792439551153, guid: d9bb42e7632fde149a43c1ee85ffcd29, type: 3}
-  spawnPoint:
-    x: 64
-    y: 127
+    x: 256
+    y: 256
   iterationTime: 0.025
 --- !u!4 &198760022
 Transform:
@@ -214,6 +258,7 @@ GameObject:
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
   - component: {fileID: 519420030}
+  - component: {fileID: 519420033}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -320,6 +365,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &519420033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e83d53ca2b14d84b401729413c441aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gridManager: {fileID: 198760021}
 --- !u!1 &619394800
 GameObject:
   m_ObjectHideFlags: 0
